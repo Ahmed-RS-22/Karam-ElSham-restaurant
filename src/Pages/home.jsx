@@ -12,7 +12,7 @@ const specials = [
     id: 40,
     name: "عرض العائلة",
     desc: "بوكس الأصحاب - تشكيلة شاورما ووجبات.",
-    image: "/menu/family-combo.png", // بدل import
+    image: "/menu/family-combo.png",
     price: 300,
   },
   {
@@ -33,24 +33,34 @@ const specials = [
 
 
   return (
-    <div>
+    <div className="min-h-screen">
       <Hero />
-      <section className="container mx-auto px-4 py-12 scroll-reveal">
+      <section className="container mx-auto px-4 py-12 bg-[var(--ks-cream)] relative">
+        {/* Background decoration */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-[var(--ks-yellow)] rounded-full animate-float"></div>
+          <div className="absolute bottom-20 right-20 w-24 h-24 bg-[var(--ks-brown)] rounded-full animate-float" style={{animationDelay: '1s'}}></div>
+        </div>
+        
         <h2 className="text-3xl font-cairo font-bold mb-10 text-center text-[var(--ks-brown)] animate-fadeInUp gradient-text">
           عروضنا المميزة
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:px-10 animate-fadeInUp stagger-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:px-10 relative z-10">
           {specials.map((item, index) => (
             <div
               key={item.id}
-              className={`bg-white hover:-translate-y-2 hover:shadow-[var(--shadow-1)] rounded-2xl shadow-lg overflow-hidden flex flex-col transition-all duration-500 hover:scale-105 hover-glow animate-scaleIn stagger-${index + 1} group`}
+              className={`bg-white hover:-translate-y-2 hover:shadow-[var(--shadow-1)] rounded-2xl shadow-lg overflow-hidden flex flex-col transition-all duration-500 hover:scale-105 hover-glow group animate-fadeInUp`}
+              style={{animationDelay: `${index * 0.2}s`}}
             >
               <div className="relative overflow-hidden">
               <img
                 src={item.image}
                 alt={item.name}
                 className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                onError={(e) => {
+                  e.target.src = "/menu/sp-3.png"; // fallback image
+                }}
               />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
