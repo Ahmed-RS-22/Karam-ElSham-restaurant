@@ -12,11 +12,9 @@ import Error from "./Pages/error";
 import LoadingPage from "./components/loadingPage";
 // 🔔 Toast
 import { Toaster } from "react-hot-toast";
-import { lazy, Suspense, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 
 function App() {
-  const Home = lazy(() => import("./Pages/home"));
-  const Menu = lazy(() => import("./Pages/menu"));
   // src/App.jsx
   const [loading, setLoading] = useState(true);
   const [showLoader, setShowLoader] = useState(true);
@@ -43,7 +41,6 @@ function App() {
 
       {/* 🌍 Main Content */}
       <main className="flex-grow">
-        <Suspense fallback={<LoadingPage></LoadingPage>}>
      {showLoader && <LoadingPage visible={loading} />}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -53,7 +50,6 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<Error />} />
         </Routes>
-        </Suspense>
       </main>
 
       {/* 🔚 Footer ثابت */}
