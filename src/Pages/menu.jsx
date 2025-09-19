@@ -35,16 +35,16 @@ export default function Menu() {
   }, []);
 
   return (
-    <div className="max-w-full mx-auto md:mx-10 px-4 py-8">
-      <h1 className="text-3xl font-cairo font-bold text-center mb-6">
+    <div className="max-w-full mx-auto md:mx-10 px-4 py-8 animate-fadeInUp">
+      <h1 className="text-3xl font-cairo font-bold text-center mb-6 gradient-text animate-fadeInUp">
         قائمة الطعام
       </h1>
 
-      <div className="flex flex-col md:flex-row gap-4 mb-6  items-center justify-between">
+      <div className="flex flex-col md:flex-row gap-4 mb-6 items-center justify-between animate-fadeInUp stagger-2">
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="border rounded p-2 w-full md:w-1/3"
+          className="border-2 border-gray-200 rounded-lg p-3 w-full md:w-1/3 focus:border-[var(--ks-yellow)] focus:outline-none transition-all duration-300 hover:shadow-md focus:shadow-lg"
           placeholder="ابحث عن طبق..."
         />
         <CategoryList
@@ -68,12 +68,12 @@ export default function Menu() {
           }
 
           return (
-            <div key={cat} className="mb-8">
-              <h2 className="text-2xl font-semibold mb-4 text-ks-brown">
+            <div key={cat} className="mb-8 animate-fadeInUp">
+              <h2 className="text-2xl font-semibold mb-6 text-ks-brown relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-[var(--ks-yellow)] after:to-[var(--ks-brown)] after:rounded-full">
                 {cat}
               </h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
-                {filteredItems.map((item) => (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center animate-fadeInUp stagger-3">
+                {filteredItems.map((item, index) => (
                   <MenuCard
                     key={item.id}
                     item={{

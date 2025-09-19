@@ -21,14 +21,18 @@ export default function Cart() {
   };
 
   return (
-    <div className="container mx-auto md:px-10 px-5 py-8">
-      <h1 className="text-3xl font-cairo font-bold mb-6 text-center">
+    <div className="container mx-auto md:px-10 px-5 py-8 animate-fadeInUp">
+      <h1 className="text-3xl font-cairo font-bold mb-6 text-center gradient-text animate-fadeInUp">
         سلة المشتريات
       </h1>
       {cart.length === 0 ? (
-        <p className="text-center text-gray-500">السلة فارغة</p>
+        <div className="text-center py-16 animate-fadeInUp">
+          <div className="text-6xl mb-4 animate-bounce-custom">🛒</div>
+          <p className="text-xl text-gray-500 mb-4">السلة فارغة</p>
+          <p className="text-gray-400">أضف بعض الأطباق الشهية من القائمة</p>
+        </div>
       ) : (
-        <div className="space-y-4">
+        <div className="space-y-6 animate-fadeInUp stagger-2">
           {cart.map((item, idx) => (
             <CartItem
               key={idx}
@@ -39,20 +43,22 @@ export default function Cart() {
             />
           ))}
 
-          <div className="text-right font-bold text-xl">
-            المجموع: {total} ج.م
+          <div className="bg-gradient-to-r from-[var(--ks-yellow)] to-[var(--ks-brown)] text-white p-6 rounded-2xl shadow-lg animate-fadeInUp stagger-3">
+            <div className="text-right font-bold text-2xl animate-pulse-custom">
+              المجموع: {total} ج.م
+            </div>
           </div>
 
-          <div className="flex justify-end gap-3">
+          <div className="flex justify-end gap-4 animate-fadeInUp stagger-4">
             <button
               onClick={() => dispatch(clearCart())}
-              className="bg-gray-400 text-white px-4 py-2 rounded"
+              className="bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 btn-animated active:scale-95"
             >
               تفريغ السلة
             </button>
             <button
               onClick={handleConfirmOrder}
-              className="bg-green-600 text-white px-4 py-2 rounded"
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 btn-animated active:scale-95 shadow-lg hover:shadow-xl"
             >
               إتمام الطلب
             </button>
