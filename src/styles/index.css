@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@layer utilities{
+
+  /* root variables */
+  :root {
+    --ks-yellow: #F2B93B;
+    --ks-brown: #5A2F1C;
+    --ks-cream: #FFF7E6;
+    --shadow-1:0 4px 5px 2px #f2b93b99  ;
+    --cairo:"cairo"
+  }
+a.active{
+  color: #F2B93B;
+  span:not(:last-child){
+    color: #F2B93B;
+  }
+
+}
+  html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: var(--ks-cream);
+  color: var(--ks-brown);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Some helpers */
+/* .btn-primary {
+  @apply bg-[var(--ks-yellow)] text-[var(--ks-brown)] font-semibold px-4 py-2 rounded-lg;
+}
+.card {
+  @apply bg-white rounded-2xl shadow-md overflow-hidden;
+} */
+
+}

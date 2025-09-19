@@ -1,0 +1,45 @@
+karam-alsham/
+│── index.html
+│── package.json
+│── tailwind.config.js
+│── vite.config.js
+│── README.md
+│
+└── src/
+    │── main.jsx              # نقطة البداية
+    │── App.jsx               # إعداد الـ Router + Layout
+    │── index.css             # استايلات Tailwind
+    │
+    ├── assets/               # الصور واللوجو
+    │   ├── logo.png
+    │   └── menu/             # صور المنيو
+    │       ├── chicken-rice.jpg
+    │       ├── shawarma-meat.jpg
+    │       └── ... (باقي الصور)
+    ├── styles/               
+    │   ├── style.css    
+    │
+    ├── components/     
+    │   ├── Navbar.jsx
+    │   ├── Footer.jsx
+    │   ├── Hero.jsx
+    │   ├── MenuCard.jsx
+    │   └── CategoryList.jsx
+    │
+    ├── pages/                # الصفحات الرئيسية
+    │   ├── Home.jsx
+    │   ├── Menu.jsx
+    │   ├── About.jsx
+    │   ├── Cart.jsx
+    │   └── Contact.jsx
+    │
+    ├── data/                 # بيانات ثابتة
+    │   └── menuData.js       # قاعدة بيانات المنيو (بالأسعار + الصور)
+    │   └── menu.json      # قاعدة بيانات المنيو (بالأسعار + الصور)
+    │
+    ├── redux/                # إدارة الحالة بـ Redux Toolkit
+    │   ├── store.js          # تهيئة المتجر
+    │   └── slices/
+    │       ├── menuSlice.js  # لتخزين بيانات المنيو
+    │       └── cartSlice.js  # لإدارة عربة التسوق (اختياري لو هتضيفها)
+
