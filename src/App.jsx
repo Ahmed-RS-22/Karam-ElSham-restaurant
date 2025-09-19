@@ -4,11 +4,11 @@ import Footer from "./components/Footer";
 
 // 📌 Pages
 import Home from "./Pages/home";
-import Menu from "./pages/menu";
-import About from "./pages/about";
-import Contact from "./pages/contact";
-import Cart from "./pages/Cart";
-import Error from "./pages/error";
+import Menu from "./Pages/menu";
+import About from "./Pages/about";
+import Contact from "./Pages/contact";
+import Cart from "./Pages/Cart";
+import Error from "./Pages/error";
 import LoadingPage from "./components/loadingPage";
 // 🔔 Toast
 import { Toaster } from "react-hot-toast";
