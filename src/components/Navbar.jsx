@@ -40,7 +40,7 @@ export default function Navbar() {
                 return isActive 
                   ? `${baseClasses} text-[var(--ks-yellow)] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[var(--ks-yellow)] after:rounded-full` 
                   : baseClasses;
-              }
+              }}
             >
               {link.label}
             </NavLink>
@@ -80,7 +80,7 @@ export default function Navbar() {
                   return isActive 
                     ? `${baseClasses} text-[var(--ks-yellow)] bg-white/10` 
                     : baseClasses;
-                }
+                }}
               >
                 {link.label}
               </NavLink>
