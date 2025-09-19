@@ -7,7 +7,7 @@ import Home from "./Pages/home";
 import Menu from "./Pages/menu";
 import About from "./Pages/about";
 import Contact from "./Pages/contact";
-import Cart from "./Pages/Cart";
+import Cart from "./Pages/cart";
 import Error from "./Pages/error";
 import LoadingPage from "./components/loadingPage";
 // 🔔 Toast
